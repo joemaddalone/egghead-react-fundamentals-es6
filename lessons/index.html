@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React ES6</title>
+</head>
+<body>
+  <ul id="lesson-list">
+  </ul>
+<script>
+  var lessons = [
+    "01-intro",
+    "02-render",
+    "03-properties",
+    "04-state",
+    "05-owner-ownee",
+    "06-refs",
+    "07-child-properties",
+    "08-lifecycle-mounting",
+    "09-lifecycle-mounting-usage",
+    "10-lifecycle-updates",
+    "11-higher-order",
+    "12-composable",
+    "13-dynamic"
+  ]
+
+  var ll = document.getElementById('lesson-list')
+
+  lessons.forEach(function(lesson){
+    ll.innerHTML += '<li><a href="/'+ lesson +'">'+lesson+'</a></li>'
+  })
+</script>
+
+</body>
+</html>
