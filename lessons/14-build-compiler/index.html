@@ -9,5 +9,18 @@
 <body>
   <div id="app"></div>
   <script src="index.js"></script>
+  <script src="//cdn.jsdelivr.net/behave.js/0.1/behave.js"></script>
+  <script>
+  var editor = new Behave({
+    textarea:document.querySelector('textarea'),
+    replaceTab:     true,
+    softTabs:       true,
+    tabSize:        2,
+    autoOpen:       true,
+    overwrite:      true,
+    autoStrip:      true,
+    autoIndent:     true
+  });
+  </script>
 </body>
 </html>

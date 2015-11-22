@@ -1,3 +1,5 @@
+// https://jsbin.com/qonaga/edit?js,output
+
 import React from 'react';
 
 class App extends React.Component {
@@ -16,7 +18,8 @@ class App extends React.Component {
       this.setState({
         output: babel.transform(code, {
           stage: 0,
-          loose: 'all'
+          loose: 'all',
+          comments: true
         }).code,
         err: ''
       })
