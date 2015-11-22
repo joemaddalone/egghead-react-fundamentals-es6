@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSX</title>
+</head>
+<body>
+  <pre>
+//lowercase !== React.Component
+&lt;div>&lt;/div>
+
+//Uppercase === React.Component reference
+&lt;App>&lt;/App>
+
+//self closing tags
+&lt;div />
+
+//multiple nodes == returning multiple functions :(
+&lt;div>&lt;/div>
+&lt;a>&lt;/a>
+
+
+//single node == returning single function :)
+&lt;div>
+  &lt;a>&lt;/a>
+&lt;/div>
+
+
+//second argument == component props,functions, etc.
+&lt;div>
+  &lt;a href="#">&lt;/a>
+&lt;/div>
+
+
+//additional arguments == children
+&lt;div>
+  &lt;a href="#">this is the text&lt;/a>
+&lt;/div>
+
+
+//React will not render unknown attributes
+//to the browser without data-*
+&lt;div notrendered="x" data-rendered="x">
+  &lt;a href="#">this is the text&lt;/a>
+&lt;/div>
+
+
+//interpreted
+&lt;div notrendered="x" data-rendered="x">
+  &lt;a href="#" onClick={this.update}>
+  {/* this is a comment */}
+  this is the text
+  &lt;/a>
+&lt;/div>
+
+
+//if else is no good in JSX syntax, use a ternary expression
+&lt;div notrendered="x" data-rendered="x">
+  &lt;a href="#" onClick={this.update}>this is the text&lt;/a>
+    {i>1 ? 'More than one' : 'One'}
+    {i>1 && 'More than one'}
+    {/* this is a comment */}
+  &lt;/a>
+&lt;/div>
+
+
+
+//inline styles
+var myStyle={
+  backgroundColor:'#000',
+  height:10 //no need for 'px'
+}
+&lt;div style={myStyle} notrendered="x" data-rendered="x">
+  &lt;a href="#" onClick={this.update}>this.props.children&lt;/a>
+    {i>1 ? 'More than one' : 'One'}
+    {i>1 && 'More than one'}
+    {/* this is a comment */}
+  &lt;/a>
+&lt;/div>
+
+  </pre>
+</body>
+</html>
