@@ -13,7 +13,8 @@ var lessons = [
   "10-lifecycle-updates",
   "11-higher-order",
   "12-composable",
-  "13-dynamic"
+  "13-dynamic",
+  "14-build-compiler"
 ]
 
 var entry = {}
