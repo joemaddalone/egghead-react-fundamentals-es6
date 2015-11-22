@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+<h2>index.html</h2>
+<pre>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+  &lt;meta charset="UTF-8">
+  &lt;title>Setup&lt;/title>
+&lt;/head>
+&lt;body>
+  &lt;div id="app">&lt;/div>
+  &lt;script src="index.js">&lt;/script>
+&lt;/body>
+&lt;/html>
+</pre>
+<h2>package.json</h2>
+<pre>
+{
+  "name": "es6-react-setup",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+      "start": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+      "babel-core": "^6.2.1",
+      "babel-loader": "^6.2.0",
+      "babel-preset-es2015": "^6.1.18",
+      "babel-preset-react": "^6.1.18",
+      "react": "^0.14.3",
+      "react-dom": "^0.14.3"
+  },
+  "description": "Setup files for React in ES6 lessons"
+}
+</pre>
+<h2>webpack.config.js</h2>
+<pre>
+module.exports = {
+  entry: './main.js',
+  output: {
+    path: './',
+    filename: 'index.js'
+  },
+  devServer: {
+    inline: true,
+    port: 3333
+  },
+  module: {
+    loaders: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015', 'react']
+        }
+      }
+    ]
+  }
+}
+
+</pre>
+<h2>App.js</h2>
+<pre>
+import React from 'react';
+class App extends React.Component {
+  render(){
+    return &lt;div>Hi&lt;/div>
+  }
+}
+
+export default App
+</pre>
+<h2>main.js</h2>
+<pre>
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+ReactDOM.render(&lt;App />, document.getElementById('app'))
+</pre>
+
+</body>
+</html>
