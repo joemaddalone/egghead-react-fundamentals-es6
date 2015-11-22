@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 100vh;
+  display:flex;
+}
+
+pre {
+  border:1px solid #ccc;
+}
+
+pre {
+  width: 50%;
+  font-family: monospace;
+  font-size: 14px;
+  margin: 0;
+  padding: 10px;
+  color: #222;
+}
