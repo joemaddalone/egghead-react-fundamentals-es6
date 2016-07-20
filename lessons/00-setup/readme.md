@@ -1,4 +1,4 @@
-#Open your project file in current directory in terminal
+#Open your project folder's current directory in terminal
 Then when type
 ```bash
 npm init
@@ -12,11 +12,12 @@ Next we will install React and ReactDOM by typing
 ```bash
 npm install react react-dom --save
 ```
-##For the next step we assume you have babel installed, webpack, as well as webpack-dev-server
+##For the next step we assume you have babel installed, webpack, as well as webpack-dev-server. If installed skip to next step.
 If not please install
 ```bash
 npm install babel webpack webpack-dev-server -g
 ```
+##if you have babel, webpack, and webpack-dev-sever is installed.
 
 Next we will install some babel preloaders
 ```bash
