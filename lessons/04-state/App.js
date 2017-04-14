@@ -1,6 +1,7 @@
 // https://jsbin.com/zijoxu/edit?js,output
 
 import React from 'react';
+
 class App extends React.Component {
   constructor(){
     super();
@@ -15,11 +16,11 @@ class App extends React.Component {
   render(){
     return (
       <div>
-      <input type="text"
-        onChange={this.update.bind(this)} />
-      <h1>{this.state.txt}</h1>
+        <input type="text"
+          onChange={this.update.bind(this)} />
+          <h1>{this.state.txt} - {this.state.cat}</h1>
       </div>
-    );
+    )
   }
 }
 

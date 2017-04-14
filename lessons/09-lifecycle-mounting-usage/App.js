@@ -1,8 +1,8 @@
-// https://jsbin.com/geveqe/edit?js,output
-// Problematic in JSBin
+// problematic in JsBin
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 class App extends React.Component {
   constructor(){
     super();
@@ -13,19 +13,23 @@ class App extends React.Component {
     this.setState({val: this.state.val + 1 })
   }
   componentWillMount(){
+    console.log('componentWillMount')
     this.setState({m: 2})
   }
   render(){
-    console.log('rendering!')
+    console.log('render')
     return (
       <button onClick={this.update}>
         {this.state.val * this.state.m}
-      </button>)
+      </button>
+    )
   }
   componentDidMount(){
+    console.log('componentDidMount')
     this.inc = setInterval(this.update,500)
   }
   componentWillUnmount(){
+    console.log('componentWillUnmount');
     clearInterval(this.inc)
   }
 }

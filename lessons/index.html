@@ -3,37 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <title>React ES6</title>
+  <style>
+    li { padding: 5px; }
+    a:hover {
+      color: red;
+    }
+  </style>
 </head>
 <body>
-  <ul id="lesson-list">
-  </ul>
+  <ol id="lesson-list">
+  </ol>
 <script>
+
   var lessons = [
-    "00-setup/instruction.html",
-    "01-intro",
-    "02-render",
-    "03-properties",
-    "04-state",
-    "05-owner-ownee",
-    "06-refs",
-    "07-child-properties",
-    "08-lifecycle-mounting",
-    "09-lifecycle-mounting-usage",
-    "10-lifecycle-updates",
-    "11-higher-order",
-    "12-composable",
-    "13-dynamic",
-    "14-build-compiler",
-    "15-jsx",
-    "16-precompile"
+    {title: "Setup a simple react app",path: "00-setup/instruction.html"},
+    {title: "Write a 'Hello World' React Component",path: "01-intro"},
+    {title: "Display Output in React with a Component's render Method",path: "02-render"},
+    {title: "Set Properties on React Components",path: "03-properties"},
+    {title: "Manage React Component State with setState",path: "04-state"},
+    {title: "Use React Components as Children for Other Components",path: "05-owner-ownee"},
+    {title: "Use React ref to Get a Reference to Specific Components",path: "06-refs"},
+    {title: "Access Nested Data with Reacts props.children",path: "07-child-properties"},
+    {title: "Understand the React Component Lifecycle Methods",path: "08-lifecycle-mounting"},
+    {title: "Manage React Component State with Lifecycle Methods",path: "09-lifecycle-mounting-usage"},
+    {title: "Control React Component Updates When New Props Are Received",path: "10-lifecycle-updates"},
+    {title: "Compose React Component Behavior with Higher Order Components",path: "11-higher-order"},
+    {title: "Write More Reusable React Components with Composable APIs",path: "12-composable"},
+    {title: "Use map to Create React Components from Arrays of Data",path: "13-dynamic"},
+    {title: "Build a JSX Live Compiler as a React Component",path: "14-build-compiler"},
+    {title: "Understand JSX at a Deeper Level",path: "15-jsx"},
+    {title: "16-precompile",path: "16-precompile"},
+    {title: "17-integration",path: "17-integration"},
+    {title: "Debug React Components with Developer Tools in Chrome", path: "18-devtools"},
+    {title: "Add Custom propType Validation to React Components", path: "prop-validation"},
+    {title: "Understand React.Children Utilities", path: "react-children"},
+    {title: "Use React.cloneElement to Extend Functionality of Children Components", path: "cloneElement"},
+    {title: "Normalize Events with Reacts Synthetic Event System", path: "events"}
   ]
 
   var ll = document.getElementById('lesson-list')
 
   lessons.forEach(function(lesson){
-    ll.innerHTML += '<li><a href="/'+ lesson +'">'+lesson+'</a></li>'
+    ll.innerHTML += '<li><a href="/'+ lesson.path +'">'+lesson.title+'</a></li>'
   })
 </script>
 
 </body>
 </html>
+
+
+<!-- Normalize Events with Reacts Synthetic Event System -->
+

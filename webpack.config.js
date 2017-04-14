@@ -14,7 +14,13 @@ var lessons = [
   "11-higher-order",
   "12-composable",
   "13-dynamic",
-  "14-build-compiler"
+  "14-build-compiler",
+  "17-integration",
+  "18-devtools",
+  "prop-validation",
+  "react-children",
+  "cloneElement",
+  "events"
 ]
 
 var entry = {}
@@ -25,7 +31,7 @@ lessons.forEach(function(lesson){
 module.exports = {
   entry: entry,
   output: {
-    path: './lessons/',
+    path: __dirname + './lessons/',
     filename: "[name]/index.js",
     publicPath: '/'
   },
@@ -35,11 +41,11 @@ module.exports = {
     port: port
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel',
+        loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react']
         }

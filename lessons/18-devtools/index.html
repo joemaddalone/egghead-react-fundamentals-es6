@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson 08</title>
+  <style>
+    .container {
+      display:flex;
+      flex-flow: column nowrap;
+      justify-content: space-around;
+      align-items: center;
+      height: 100vh;
+    }
+    header {
+      flex:0;
+      text-align: center;
+      margin: 25px;
+    }
+    h1 {flex:1;}
+    ul {
+      padding: 0;
+      margin-bottom: 25px;
+      display: inline
+    }
+    li{
+      display: inline;
+      margin: 5px;
+      padding: 5px;
+      border-radius: 3px;
+      border:1px solid #eee;
+    }
+
+    li a {
+      color: #000;
+      text-decoration: none;
+    }
+
+    li.active {
+      background-color: #eee;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,8 +1,8 @@
-// https://jsbin.com/fonore/edit?js,console,output
 // problematic in JsBin
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 class App extends React.Component {
   constructor(){
     super();
@@ -13,17 +13,17 @@ class App extends React.Component {
     this.setState({val: this.state.val + 1 })
   }
   componentWillMount(){
-    console.log('mounting')
+    console.log('componentWillMount')
   }
   render(){
-    console.log('rendering!')
+    console.log('render')
     return <button onClick={this.update}>{this.state.val}</button>
   }
   componentDidMount(){
-    console.log('mounted')
+    console.log('componentDidMount')
   }
   componentWillUnmount(){
-    console.log('bye!')
+    console.log('componentWillUnmount')
   }
 }
 

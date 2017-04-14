@@ -2,53 +2,57 @@
 
 import React from 'react';
 
-let Mixin = InnerComponent => class extends React.Component {
+const HOC = (InnerComponent) => class extends React.Component {
   constructor(){
     super();
-    this.update = this.update.bind(this);
-    this.state = {val: 0}
+    this.state = {count: 0}
   }
   update(){
-    this.setState({val: this.state.val + 1})
+    this.setState({count: this.state.count + 1})
   }
   componentWillMount(){
     console.log('will mount')
   }
   render(){
-    return <InnerComponent
-      update={this.update}
-      {...this.state}
-      {...this.props} />
-  }
-  componentDidMount(){
-    console.log('mounted')
+    return (
+      <InnerComponent
+        {...this.props}
+        {...this.state}
+        update={this.update.bind(this)}
+      />
+    )
   }
 }
 
-const Button = (props) => <button
-                            onClick={props.update}>
-                            {props.txt} - {props.val}
-                          </button>
-
-const Label = (props) => <label
-                            onMouseMove={props.update}>
-                            {props.txt} - {props.val}
-                          </label>
-
-let ButtonMixed = Mixin(Button)
-let LabelMixed = Mixin(Label)
-
 class App extends React.Component {
-
   render(){
     return (
       <div>
-        <ButtonMixed txt="Button" />
-        <LabelMixed txt="Label" />
+        <Button>button</Button>
+        <hr/>
+        <LabelHOC>label</LabelHOC>
       </div>
-    );
+    )
   }
-
 }
+
+const Button = HOC((props) =>
+  <button onClick={props.update}>{props.children} - {props.count}</button>
+)
+
+class Label extends React.Component {
+  componentWillMount(){
+    console.log('label will mount')
+  }
+  render(){
+    return (
+      <label onMouseMove={this.props.update}>
+      {this.props.children} - {this.props.count}
+      </label>
+    )
+  }
+}
+
+const LabelHOC = HOC(Label)
 
 export default App

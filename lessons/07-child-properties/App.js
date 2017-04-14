@@ -1,18 +1,20 @@
 // https://jsbin.com/cumopab/edit?js,output
 
 import React from 'react';
+
 class App extends React.Component {
   render(){
-    return <Button>I <Heart/> React</Button>
+    return <Button>I <Heart /> React</Button>
   }
 }
 
-class Button extends React.Component {
+const Button = (props) =>
+  <button>{props.children}</button>
+
+class Heart extends React.Component {
   render(){
-    return <button>{this.props.children}</button>
+    return <span>&hearts;</span>
   }
 }
-
-const Heart = () => <span className="glyphicon glyphicon-heart"></span>
 
 export default App

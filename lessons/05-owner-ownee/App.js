@@ -1,10 +1,13 @@
-// https://jsbin.com/yixosu/edit?js,output
+// https://jsbin.com/sokoje/2/edit
+
 import React from 'react';
+
 class App extends React.Component {
   constructor(){
     super();
-    this.state = { txt: ''}
-    this.update = this.update.bind(this)
+    this.state = {
+      txt: 'this is the state text'
+    }
   }
   update(e){
     this.setState({txt: e.target.value})
@@ -12,23 +15,16 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <Widget txt={this.state.txt} update={this.update} />
-        <Widget txt={this.state.txt} update={this.update} />
-        <Widget txt={this.state.txt} update={this.update} />
-        <Widget txt={this.state.txt} update={this.update} />
+        <h1>{this.state.txt}</h1>
+        <Widget update={this.update.bind(this)} />
+        <Widget update={this.update.bind(this)} />
+        <Widget update={this.update.bind(this)} />
       </div>
-    );
+    )
   }
 }
 
-const Widget = (props) => {
-  return (
-      <div>
-        <input type="text"
-          onChange={props.update} />
-        <h1>{props.txt}</h1>
-      </div>
-    );
-}
+const Widget = (props) =>
+  <input type="text" onChange={props.update}/>
 
 export default App
