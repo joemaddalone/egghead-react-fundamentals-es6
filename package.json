@@ -12,7 +12,6 @@
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "superagent": "^3.5.2",
     "webpack": "^2.4.0",
     "webpack-dev-server": "^2.4.2"
   },
